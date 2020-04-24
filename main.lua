@@ -9,7 +9,8 @@ function love.load(arg)
   input = Input()
   input:bind('left', 'left')
   input:bind('right', 'right')
-  
+  input:bind('up', 'up')
+
   player = Player(world, love.graphics.getWidth()/2, love.graphics:getHeight()/2)
 end
 
