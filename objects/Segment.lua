@@ -2,7 +2,7 @@ vector = require "lib/brinevector"
 
 Segment = Object:extend()
 
-function Segment:new(world, x, y)
+function Segment:new(self, world, x, y)
   self.body = love.physics.newBody(world, x, y, "dynamic")
   self.points = {}
   self.size = 20
