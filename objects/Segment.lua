@@ -6,6 +6,9 @@ function Segment:new(self, world, x, y)
   self.body = love.physics.newBody(world, x, y, "dynamic")
   self.points = {}
   self.size = 20
+  
+  self.body:setLinearDamping(2)
+  self.body:setAngularDamping(10)
 end
 
 function Segment:update()

@@ -13,8 +13,8 @@ function love.load(arg)
   input:bind('right', 'right')
   input:bind('up', 'up')
 
-  player = Player(world, love.graphics.getWidth()/2, love.graphics:getHeight()/2)
-  tail = Tail(world, player)
+  player = Player(world, love.graphics.getWidth()/2, love.graphics:getHeight()/2, 10, 3)
+  tail = Tail(world, player, 24)
 end
 
 function love.update(dt)
