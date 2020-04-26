@@ -9,6 +9,7 @@ function Player:new(world, x, y, speed, rotationSpeed)
 end
 
 function Player:update(dt)
+  Player.super:update(self)
   if input:down('right') then horizontalAxis = 1
 	elseif input:down('left') then horizontalAxis = -1
 	else horizontalAxis = 0 end
