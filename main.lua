@@ -27,9 +27,16 @@ function love.update(dt)
   player:update(dt)
   tail:update(dt)
   world:update(dt)
+
+  local p = Vector(player.body:getX(), player.body:getY())
+  dist = food - p
+  if dist.length < 14 then
+    food = Vector(love.math.random(love.graphics:getWidth()), love.math.random(love.graphics:getHeight()))
+  end
 end
 
 function love.draw()
+  love.graphics.print(dist.length, 10, 10)
   player:draw()
   tail:draw()
   love.graphics.rectangle("fill", food.x, food.y, 8, 8)
