@@ -1,6 +1,7 @@
 Object = require "lib/classic"
 Input = require "lib/Input"
 Vector = require "lib/brinevector"
+Timer = require "lib/timer"
 
 require 'objects/Segment'
 require 'objects/Player'
@@ -9,17 +10,17 @@ require 'objects/Tail'
 local tick = require 'lib/tick'
 
 function love.load(arg)
+	tick.rate = (1/60)
   world = love.physics.newWorld(0, 0, true);
 
   input = Input()
   input:bind('left', 'left')
   input:bind('right', 'right')
-  input:bind('up', 'up')
 
-  player = Player(world, love.graphics.getWidth()/2, love.graphics:getHeight()/2, 6, 3)
+  player = Player(world, love.graphics.getWidth()/2, love.graphics:getHeight()/2, 5, 3, 20)
+  tails = 0
 
   food = Vector(love.math.random(love.graphics:getWidth()), love.math.random(love.graphics:getHeight()))
-	tick.rate = (1/60)
 end
 
 function love.update(dt)

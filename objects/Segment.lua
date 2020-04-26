@@ -2,20 +2,28 @@ vector = require "lib/brinevector"
 
 Segment = Object:extend()
 
-function Segment:new(self, world, x, y)
+function Segment:new(self, world, x, y, size, speed)
   self.world = world
-  self.body = love.physics.newBody(world, x, y, "dynamic")
-  self.points = {}
-  self.size = 20
+  self.finalSize = size or 20
+  self.speed = speed or 10
 
-  self.body:setLinearDamping(2)
+  self.body = love.physics.newBody(world, x, y, "dynamic")
+
+  self.body:setLinearDamping(3)
   self.body:setAngularDamping(10)
+
   self.modX, self.modY = getModular(self.body)
+
+  self.timer = Timer()
+  self.size = 0
+  self.timer:tween(0.4, self, {size = self.finalSize}, 'in-out-cubic')
 end
 
-function Segment:update(self)
+function Segment:update(self, dt)
+  self.body:applyLinearImpulse(math.sin(self.body:getAngle()) * self.speed, -math.cos(self.body:getAngle()) * self.speed);
   self.modX, self.modY = getModular(self.body)
-  if self.tail then self.tail:update() end
+  if self.tail then self.tail:update(dt) end
+  self.timer:update(dt)
 end
 
 function Segment:draw()
@@ -28,8 +36,6 @@ function Segment:draw()
   end
 
   if self.tail then self.tail:draw() end
-
-  -- love.graphics.circle("fill", self.modX - math.sin(self.body:getAngle()) * 12, self.modY + math.cos(self.body:getAngle()) * 12, 4)
 end
 
 function Segment:connect(obj)
@@ -53,10 +59,13 @@ function Segment:getModPos()
 end
 
 function Segment:addTail()
-  if self.tail then
-    self.tail:addTail()
-
-  else
-    self.tail = Tail(self.world, self, 24)
-  end
+  self.timer:tween(0.1, self, {size = self.size * 1.25}, 'in-quad', function() 
+    if self.tail then
+      self.tail:addTail()
+      tails = tails + 1
+    else
+      self.tail = Tail(self.world, self, 24, self.finalSize, self.speed)
+    end
+    self.timer:tween(0.15, self, {size = self.size / 1.25}, 'in-quad') 
+  end)
 end
