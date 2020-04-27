@@ -39,6 +39,8 @@ function love.update(dt)
     food:eat()
     player:addTail(tails)
   end
+
+  checkCollisions()
 end
 
 function love.draw()
@@ -50,5 +52,21 @@ function love.draw()
   love.graphics.setCanvas()
 
   love.graphics.draw(canvas, 0, 0, 0, 2, 2)
+end
+
+function checkCollisions()
+  local size = player.size
+
+  for index, tail in ipairs(tails) do
+    local current = Vector(tail:getModPos())
+    
+    for i=index+1,#tails-1 do
+      local other = Vector(tails[i]:getModPos())
+
+      if (current - other).length < size/2 then
+        love.event.quit()
+      end
+    end
+  end
 end
 
