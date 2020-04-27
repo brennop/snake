@@ -6,10 +6,15 @@ Timer = require "lib/timer"
 require 'objects/Segment'
 require 'objects/Player'
 require 'objects/Tail'
+require 'objects/Food'
 
 local tick = require 'lib/tick'
 
+gw = 384
+gh = 216
+
 function love.load(arg)
+  love.graphics.setDefaultFilter('nearest')
 	tick.rate = (1/60)
   world = love.physics.newWorld(0, 0, true);
 
@@ -17,10 +22,11 @@ function love.load(arg)
   input:bind('left', 'left')
   input:bind('right', 'right')
 
-  player = Player(world, love.graphics.getWidth()/2, love.graphics:getHeight()/2, 5, 3, 20)
-  tails = 0
+  player = Player(world, gw/2, gh/2, 3, 3, 10)
+  tails = {player}
 
-  food = Vector(love.math.random(love.graphics:getWidth()), love.math.random(love.graphics:getHeight()))
+  food = Food(3)
+  canvas = love.graphics.newCanvas()
 end
 
 function love.update(dt)
@@ -28,14 +34,21 @@ function love.update(dt)
   world:update(dt)
 
   local p = Vector(player:getModPos())
-  dist = food - p
+  dist = food.pos - p
   if dist.length < 14 then
-    food = Vector(love.math.random(love.graphics:getWidth()), love.math.random(love.graphics:getHeight()))
-    player:addTail()
+    food:eat()
+    player:addTail(tails)
   end
 end
 
 function love.draw()
-  player:draw()
-  love.graphics.rectangle("fill", food.x, food.y, 6, 6)
+	love.graphics.print("FPS: "..tostring(love.timer.getFPS()), 10, 10)
+  love.graphics.setCanvas(canvas)
+    love.graphics.clear()
+    player:draw()
+    food:draw()
+  love.graphics.setCanvas()
+
+  love.graphics.draw(canvas, 0, 0, 0, 2, 2)
 end
+
