@@ -3,12 +3,15 @@ Input = require "lib/Input"
 Vector = require "lib/brinevector"
 Timer = require "lib/timer"
 
+local tick = require 'lib/tick'
+local moonshine = require 'lib/moonshine'
+
+require 'objects/Game'
+require 'objects/State'
 require 'objects/Segment'
 require 'objects/Player'
 require 'objects/Tail'
 require 'objects/Food'
-
-local tick = require 'lib/tick'
 
 gw = 384
 gh = 216
@@ -16,57 +19,39 @@ gh = 216
 function love.load(arg)
   love.graphics.setDefaultFilter('nearest')
 	tick.rate = (1/60)
-  world = love.physics.newWorld(0, 0, true);
 
   input = Input()
   input:bind('left', 'left')
   input:bind('right', 'right')
 
-  player = Player(world, gw/2, gh/2, 3, 3, 10)
-  tails = {player}
-
-  food = Food(3)
+  love.graphics.setBackgroundColor(0.1, 0.1, 0.1, 1)
   canvas = love.graphics.newCanvas()
+
+  effect = moonshine(moonshine.effects.glow)
+              .chain(moonshine.effects.chromasep)
+              .chain(moonshine.effects.scanlines)
+              .chain(moonshine.effects.crt)
+
+  effect.glow.strength = 4
+  effect.chromasep.radius = 1.4
+  effect.scanlines.opacity = 0.05
+  effect.scanlines.width = 4
+
+  gameState = State(Game)
 end
 
 function love.update(dt)
-  player:update(dt)
-  world:update(dt)
-
-  local p = Vector(player:getModPos())
-  dist = food.pos - p
-  if dist.length < 14 then
-    food:eat()
-    player:addTail(tails)
-  end
-
-  checkCollisions()
+  gameState:current():update(dt)
 end
 
 function love.draw()
-	love.graphics.print("FPS: "..tostring(love.timer.getFPS()), 10, 10)
   love.graphics.setCanvas(canvas)
     love.graphics.clear()
-    player:draw()
-    food:draw()
+    gameState:current():draw()
   love.graphics.setCanvas()
 
-  love.graphics.draw(canvas, 0, 0, 0, 2, 2)
+  effect(function()
+    love.graphics.draw(canvas, 0, 0, 0, 2, 2)
+  end)
+	love.graphics.print("FPS: "..tostring(love.timer.getFPS()), 10, 10)
 end
-
-function checkCollisions()
-  local size = player.size
-
-  for index, tail in ipairs(tails) do
-    local current = Vector(tail:getModPos())
-    
-    for i=index+1,#tails-1 do
-      local other = Vector(tails[i]:getModPos())
-
-      if (current - other).length < size/2 then
-        love.event.quit()
-      end
-    end
-  end
-end
-
