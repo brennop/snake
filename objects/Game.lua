@@ -4,7 +4,7 @@ function Game:new()
   self.world = love.physics.newWorld(0, 0, true);
 
   self.player = Player(self.world, gw/2, gh/2, 3, 3, 10)
-  self.tails = {player}
+  self.tails = { self.player }
 
   for i = 2, INITIAL_SIZE do
     self.player:addTail(self.tails)
@@ -59,7 +59,7 @@ function Game:checkCollisions()
     for i=index + 1, #self.tails-1 do
       local other = Vector(self.tails[i]:getModPos())
 
-      if (current - other).length < ( size * 2/3 ) then
+      if (current - other).length < (size * 0.9) then
         gameState:replace(Game)
         return
       end
