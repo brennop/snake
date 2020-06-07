@@ -6,7 +6,7 @@ function Game:new()
   self.player = Player(self.world, gw/2, gh/2, 3, 3, 10)
   self.tails = {player}
 
-  for i = 2, 3 do
+  for i = 2, INITIAL_SIZE do
     self.player:addTail(self.tails)
   end
 
@@ -28,13 +28,19 @@ function Game:update(dt)
 end
 
 function Game:draw()
-    self.player:draw()
-    self.food:draw()
+  -- this looks awful and unoptimized
+  -- TODO: make it look awesome
+  local score = love.graphics.newText(font, {{1, 1, 1, 0.5}, string.format("%02d", math.max(#self.tails - INITIAL_SIZE, 0))})
+  love.graphics.draw(score, gw/2, gh/2, 0, 1, 1, score:getWidth()/2, score:getHeight()/2)
+
+  self.player:draw()
+  self.food:draw()
 end
 
 function Game:destroy()
   -- there should be a better way for removing
   -- those thing but I don't know a lot of gcing
+  -- probably should use Object:release
   for i, g in ipairs(self.tails) do
     table.remove(g, i)
   end

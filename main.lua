@@ -16,9 +16,13 @@ require 'objects/Food'
 gw = 384
 gh = 216
 
+INITIAL_SIZE = 3
+
 function love.load(arg)
   love.graphics.setDefaultFilter('nearest')
 	tick.rate = (1/60)
+
+  font = love.graphics.newFont('assets/roboto.ttf', 48)
 
   input = Input()
   input:bind('left', 'left')
