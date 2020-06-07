@@ -6,7 +6,8 @@ function State:new(initialState)
 end
 
 function State:push(state)
-  table.insert(self.state, state)
+  local instance = state()
+  table.insert(self.state, instance)
 end
 
 function State:current()

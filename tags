@@ -1,0 +1,241 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+Canvas size	lib/moonshine/README.md	/^### Canvas size$/;"	S
+Chains	lib/moonshine/README.md	/^### Chains$/;"	S
+Drawing effects	lib/moonshine/README.md	/^### Drawing effects$/;"	S
+Effects and effect parameters	lib/moonshine/README.md	/^### Effects and effect parameters$/;"	S
+Food:draw	objects/Food.lua	/^function Food:draw()$/;"	f
+Food:eat	objects/Food.lua	/^function Food:eat()$/;"	f
+Food:new	objects/Food.lua	/^function Food:new(size)$/;"	f
+Food:setRandomPosition	objects/Food.lua	/^function Food:setRandomPosition()$/;"	f
+Game:checkCollisions	objects/Game.lua	/^function Game:checkCollisions()$/;"	f
+Game:destroy	objects/Game.lua	/^function Game:destroy()$/;"	f
+Game:draw	objects/Game.lua	/^function Game:draw()$/;"	f
+Game:new	objects/Game.lua	/^function Game:new()$/;"	f
+Game:update	objects/Game.lua	/^function Game:update(dt)$/;"	f
+General usage	lib/moonshine/README.md	/^## General usage$/;"	s
+Getting started	lib/moonshine/README.md	/^## Getting started$/;"	s
+Input.new	lib/Input.lua	/^function Input.new()$/;"	f
+Input:bind	lib/Input.lua	/^function Input:bind(key, action)$/;"	f
+Input:down	lib/Input.lua	/^function Input:down(action, interval, delay)$/;"	f
+Input:gamepadaxis	lib/Input.lua	/^function Input:gamepadaxis(joystick, axis, newvalue)$/;"	f
+Input:gamepadpressed	lib/Input.lua	/^function Input:gamepadpressed(joystick, button)$/;"	f
+Input:gamepadreleased	lib/Input.lua	/^function Input:gamepadreleased(joystick, button)$/;"	f
+Input:keypressed	lib/Input.lua	/^function Input:keypressed(key)$/;"	f
+Input:keyreleased	lib/Input.lua	/^function Input:keyreleased(key)$/;"	f
+Input:mousepressed	lib/Input.lua	/^function Input:mousepressed(x, y, button)$/;"	f
+Input:mousereleased	lib/Input.lua	/^function Input:mousereleased(x, y, button)$/;"	f
+Input:pressed	lib/Input.lua	/^function Input:pressed(action)$/;"	f
+Input:released	lib/Input.lua	/^function Input:released(action)$/;"	f
+Input:sequence	lib/Input.lua	/^function Input:sequence(...)$/;"	f
+Input:unbind	lib/Input.lua	/^function Input:unbind(key)$/;"	f
+Input:unbindAll	lib/Input.lua	/^function Input:unbindAll()$/;"	f
+Input:update	lib/Input.lua	/^function Input:update()$/;"	f
+Input:wheelmoved	lib/Input.lua	/^function Input:wheelmoved(x, y)$/;"	f
+Is this efficient?	lib/moonshine/README.md	/^### Is this efficient?$/;"	S
+License	lib/moonshine/README.md	/^## License$/;"	s
+List of effects	lib/moonshine/README.md	/^## List of effects$/;"	s
+Object:__call	lib/classic.lua	/^function Object:__call(...)$/;"	f
+Object:__tostring	lib/classic.lua	/^function Object:__tostring()$/;"	f
+Object:extend	lib/classic.lua	/^function Object:extend()$/;"	f
+Object:implement	lib/classic.lua	/^function Object:implement(...)$/;"	f
+Object:is	lib/classic.lua	/^function Object:is(T)$/;"	f
+Object:new	lib/classic.lua	/^function Object:new()$/;"	f
+Overview	lib/moonshine/README.md	/^## Overview$/;"	s
+Player:new	objects/Player.lua	/^function Player:new(world, x, y, speed, rotationSpeed, size)$/;"	f
+Player:update	objects/Player.lua	/^function Player:update(dt)$/;"	f
+Segment:addTail	objects/Segment.lua	/^function Segment:addTail(tails)$/;"	f
+Segment:connect	objects/Segment.lua	/^function Segment:connect(obj)$/;"	f
+Segment:draw	objects/Segment.lua	/^function Segment:draw()$/;"	f
+Segment:getModPos	objects/Segment.lua	/^function Segment:getModPos()$/;"	f
+Segment:new	objects/Segment.lua	/^function Segment:new(self, world, x, y, size, speed)$/;"	f
+Segment:update	objects/Segment.lua	/^function Segment:update(self, dt)$/;"	f
+State:current	objects/State.lua	/^function State:current()$/;"	f
+State:new	objects/State.lua	/^function State:new(initialState)$/;"	f
+State:pop	objects/State.lua	/^function State:pop() $/;"	f
+State:push	objects/State.lua	/^function State:push(state)$/;"	f
+State:replace	objects/State.lua	/^function State:replace(state)$/;"	f
+Tail:new	objects/Tail.lua	/^function Tail:new(world, con, offset, size)$/;"	f
+Tail:update	objects/Tail.lua	/^function Tail:update(dt)$/;"	f
+Temporarily disabling effects	lib/moonshine/README.md	/^### Temporarily disabling effects$/;"	S
+Timer.new	lib/timer.lua	/^function Timer.new()$/;"	f
+Timer:after	lib/timer.lua	/^function Timer:after(delay, func)$/;"	f
+Timer:cancel	lib/timer.lua	/^function Timer:cancel(handle)$/;"	f
+Timer:clear	lib/timer.lua	/^function Timer:clear()$/;"	f
+Timer:during	lib/timer.lua	/^function Timer:during(delay, during, after)$/;"	f
+Timer:every	lib/timer.lua	/^function Timer:every(delay, after, count)$/;"	f
+Timer:script	lib/timer.lua	/^function Timer:script(f)$/;"	f
+Timer:update	lib/timer.lua	/^function Timer:update(dt)$/;"	f
+Vector.__add	lib/brinevector.lua	/^function Vector.__add(v1, v2)$/;"	f
+Vector.__call	lib/brinevector.lua	/^  function Vector.__call(t,x,y)$/;"	f
+Vector.__concat	lib/brinevector.lua	/^function Vector.__concat(str, v)$/;"	f
+Vector.__div	lib/brinevector.lua	/^function Vector.__div(v1, op)$/;"	f
+Vector.__eq	lib/brinevector.lua	/^function Vector.__eq(v1,v2)$/;"	f
+Vector.__index	lib/brinevector.lua	/^function Vector.__index(t, k)$/;"	f
+Vector.__len	lib/brinevector.lua	/^function Vector.__len(v)$/;"	f
+Vector.__mod	lib/brinevector.lua	/^function Vector.__mod(v1,v2)  -- ran out of symbols, so i chose % for the hadamard product$/;"	f
+Vector.__mul	lib/brinevector.lua	/^function Vector.__mul(v1, op)$/;"	f
+Vector.__newindex	lib/brinevector.lua	/^function Vector.__newindex(t,k,v)$/;"	f
+Vector.__pairs	lib/brinevector.lua	/^function Vector.__pairs(v)$/;"	f
+Vector.__sub	lib/brinevector.lua	/^function Vector.__sub(v1, v2)$/;"	f
+Vector.__tostring	lib/brinevector.lua	/^function Vector.__tostring(t)$/;"	f
+Vector.__unm	lib/brinevector.lua	/^function Vector.__unm(v)$/;"	f
+Vector.angled	lib/brinevector.lua	/^function Vector.angled(v, angle)$/;"	f
+Vector.axes	lib/brinevector.lua	/^function Vector.axes(order)$/;"	f
+Vector.clamp	lib/brinevector.lua	/^function Vector.clamp(v, topleft, bottomright)$/;"	f
+Vector.dir	lib/brinevector.lua	/^function Vector.dir(dir)$/;"	f
+Vector.getAngle	lib/brinevector.lua	/^function Vector.getAngle(v)$/;"	f
+Vector.getCeil	lib/brinevector.lua	/^function Vector.getCeil(v)$/;"	f
+Vector.getCopy	lib/brinevector.lua	/^function Vector.getCopy(v)$/;"	f
+Vector.getFloor	lib/brinevector.lua	/^function Vector.getFloor(v)$/;"	f
+Vector.getInverse	lib/brinevector.lua	/^function Vector.getInverse(v)$/;"	f
+Vector.getLength	lib/brinevector.lua	/^function Vector.getLength(v)$/;"	f
+Vector.getLengthSquared	lib/brinevector.lua	/^function Vector.getLengthSquared(v)$/;"	f
+Vector.getNormalized	lib/brinevector.lua	/^function Vector.getNormalized(v)$/;"	f
+Vector.hadamard	lib/brinevector.lua	/^function Vector.hadamard(v1, v2) -- also known as "Componentwise multiplication"$/;"	f
+Vector.isVector	lib/brinevector.lua	/^  function Vector.isVector(arg)$/;"	f
+Vector.rotated	lib/brinevector.lua	/^function Vector.rotated(v, angle)$/;"	f
+Vector.split	lib/brinevector.lua	/^function Vector.split(v)$/;"	f
+Vector.trim	lib/brinevector.lua	/^function Vector.trim(v,mag)$/;"	f
+Writing effects	lib/moonshine/README.md	/^## Writing effects$/;"	s
+[f]	lib/Input.lua	/^            old_functions[f](...)$/;"	f
+[key]	lib/Input.lua	/^                    self.functions[key]()$/;"	f
+__call	lib/moonshine/init.lua	/^    __call = function(_, ...) return chain.draw(...) end,$/;"	f
+__call	lib/timer.lua	/^	__call = function(t, ...) return default:tween(...) end,$/;"	f
+__call	lib/timer.lua	/^__call = function(tween, self, len, subject, target, method, after, ...)$/;"	f
+__index	lib/moonshine/init.lua	/^    __index = function(_,k)$/;"	f
+__index	lib/timer.lua	/^__index = function(tweens, key)$/;"	f
+__newindex	lib/moonshine/init.lua	/^    __newindex = function(_, k, v)$/;"	f
+__newindex	lib/moonshine/init.lua	/^    __newindex = function(self,k,v)$/;"	f
+__newindex	lib/timer.lua	/^	__newindex = function(k,v) Timer.tween[k] = v end,$/;"	f
+_nothing_	lib/timer.lua	/^local function _nothing_() end$/;"	f
+angle	lib/moonshine/chromasep.lua	/^    angle  = function(v) angle  = tonumber(v) or 0 end,$/;"	f
+back	lib/timer.lua	/^	back = function(s,bounciness)$/;"	f
+bounce	lib/timer.lua	/^	bounce = function(s) -- magic numbers ahead$/;"	f
+boxblur	lib/moonshine/README.md	/^### boxblur$/;"	S
+buffer	lib/moonshine/init.lua	/^  local buffer = function()$/;"	f
+build_shader	lib/moonshine/fastgaussianblur.lua	/^local function build_shader(taps, offset, offset_type, sigma)$/;"	f
+chain	lib/timer.lua	/^	chain = function(f1, f2) -- concatenates two functions$/;"	f
+chain.disable	lib/moonshine/init.lua	/^  chain.disable = function(name, ...)$/;"	f
+chain.draw	lib/moonshine/init.lua	/^  chain.draw = function(func, ...)$/;"	f
+chain.enable	lib/moonshine/init.lua	/^  chain.enable = function(name, ...)$/;"	f
+chain.next	lib/moonshine/init.lua	/^  chain.next = function(e)$/;"	f
+chain.resize	lib/moonshine/init.lua	/^  chain.resize = function(w, h)$/;"	f
+chromasep	lib/moonshine/README.md	/^### chromasep$/;"	S
+circ	lib/timer.lua	/^	circ   = function(s) return 1 - math.sqrt(1-s*s) end,$/;"	f
+clamp	lib/brinevector.lua	/^local function clamp(x, min, max)$/;"	f
+colorgradesimple	lib/moonshine/README.md	/^### colorgradesimple$/;"	S
+con	lib/moonshine/init.lua	/^  local con = function(...) return effect(moonshine, ...) end$/;"	f
+construct	lib/timer.lua	/^	local function construct(pattern, f)$/;"	f
+copy	lib/Input.lua	/^local copy = function(t1)$/;"	f
+crt	lib/moonshine/README.md	/^### crt$/;"	S
+cubic	lib/timer.lua	/^	cubic  = function(s) return s*s*s end,$/;"	f
+delta	lib/timer.lua	/^				local ok, delta = pcall(function() return (v-ref)*1 end)$/;"	f
+desaturate	lib/moonshine/README.md	/^### desaturate$/;"	S
+dmg	lib/moonshine/README.md	/^### dmg$/;"	S
+draw	lib/moonshine/boxblur.lua	/^  local draw = function(buffer)$/;"	f
+draw	lib/moonshine/chromasep.lua	/^  local draw = function(buffer, effect)$/;"	f
+draw	lib/moonshine/fastgaussianblur.lua	/^  local function draw(buffer)$/;"	f
+draw	lib/moonshine/filmgrain.lua	/^  local draw = function(buffer)$/;"	f
+draw	lib/moonshine/gaussianblur.lua	/^  local draw = function(buffer)$/;"	f
+draw	lib/moonshine/glow.lua	/^  local draw = function(buffer)$/;"	f
+elastic	lib/timer.lua	/^	elastic = function(s, amp, period)$/;"	f
+expo	lib/timer.lua	/^	expo   = function(s) return 2^(10*(s-1)) end,$/;"	f
+f	lib/timer.lua	/^	       or construct('^in%-out%-([^-]+)$', function(f) return chain(f, out(f)) end)$/;"	f
+f	lib/timer.lua	/^	       or construct('^out%-in%-([^-]+)$', function(f) return chain(out(f), f) end)$/;"	f
+fastgaussianblur	lib/moonshine/README.md	/^### fastgaussianblur$/;"	S
+filmgrain	lib/moonshine/README.md	/^### filmgrain$/;"	S
+fog	lib/moonshine/README.md	/^### fog$/;"	S
+gaussianblur	lib/moonshine/README.md	/^### gaussianblur$/;"	S
+getModular	objects/Segment.lua	/^function getModular(body)$/;"	f
+getPoints	objects/Segment.lua	/^function getPoints(x, y, s, r)$/;"	f
+glow	lib/moonshine/README.md	/^### glow$/;"	S
+godsray	lib/moonshine/README.md	/^### godsray$/;"	S
+is_valid_palette	lib/moonshine/dmg.lua	/^local is_valid_palette = function(v)$/;"	f
+iteraxes	lib/brinevector.lua	/^local function iteraxes(ordertable, i)$/;"	f
+iterpairs	lib/brinevector.lua	/^local function iterpairs(vector, k)$/;"	f
+linear	lib/timer.lua	/^	linear = function(s) return s end,$/;"	f
+lookup_palette	lib/moonshine/dmg.lua	/^local lookup_palette = function(name)$/;"	f
+love.conf	conf.lua	/^function love.conf(t)$/;"	f
+love.draw	lib/moonshine/fog.lua	/^function love.draw()$/;"	f
+love.draw	main.lua	/^function love.draw()$/;"	f
+love.load	lib/moonshine/fog.lua	/^function love.load()$/;"	f
+love.load	main.lua	/^function love.load(arg)$/;"	f
+love.run	lib/tick.lua	/^love.run = function()$/;"	f
+love.update	lib/moonshine/fog.lua	/^function love.update(dt)$/;"	f
+love.update	main.lua	/^function love.update(dt)$/;"	f
+love[f]	lib/Input.lua	/^        love[f] = function(...)$/;"	f
+make_blur_shader	lib/moonshine/glow.lua	/^local function make_blur_shader(sigma)$/;"	f
+module[k]	lib/timer.lua	/^		module[k] = function(...) return default[k](default, ...) end$/;"	f
+moonshine	lib/moonshine/README.md	/^# moonshine$/;"	c
+moonshine.Effect	lib/moonshine/init.lua	/^moonshine.Effect = function(e)$/;"	f
+moonshine.chain	lib/moonshine/init.lua	/^moonshine.chain = function(w,h,effect)$/;"	f
+moonshine.draw_shader	lib/moonshine/init.lua	/^moonshine.draw_shader = function(buffer, shader)$/;"	f
+moonshine.effects	lib/moonshine/init.lua	/^moonshine.effects = setmetatable({}, {__index = function(self, key)$/;"	f
+num_bands	lib/moonshine/posterize.lua	/^      num_bands = function(v)$/;"	f
+out	lib/timer.lua	/^	out = function(f) -- 'rotates' a function$/;"	f
+pixelate	lib/moonshine/README.md	/^### pixelate$/;"	S
+posterize	lib/moonshine/README.md	/^### posterize$/;"	S
+quad	lib/timer.lua	/^	quad   = function(s) return s*s end,$/;"	f
+quart	lib/timer.lua	/^	quart  = function(s) return s*s*s*s end,$/;"	f
+quint	lib/timer.lua	/^	quint  = function(s) return s*s*s*s*s end,$/;"	f
+radius	lib/moonshine/chromasep.lua	/^    radius = function(v) radius = tonumber(v) or 0 end$/;"	f
+resetShader	lib/moonshine/gaussianblur.lua	/^local function resetShader(sigma)$/;"	f
+s,	lib/timer.lua	/^		return function(s, ...) return (s < .5 and f1(2*s, ...) or 1 + f2(2*s-1, ...)) * .5 end$/;"	f
+s,	lib/timer.lua	/^		return function(s, ...) return 1 - f(1-s, ...) end$/;"	f
+scanlines	lib/moonshine/README.md	/^### scanlines$/;"	S
+setters	lib/moonshine/colorgradesimple.lua	/^    setters = {factors = function(v) shader:send("factors", v) end},$/;"	f
+setters.amp	lib/moonshine/sketch.lua	/^  setters.amp = function(v)$/;"	f
+setters.center	lib/moonshine/sketch.lua	/^  setters.center = function(v)$/;"	f
+setters.color	lib/moonshine/scanlines.lua	/^  setters.color = function(c)$/;"	f
+setters.color	lib/moonshine/vignette.lua	/^  setters.color = function(c)$/;"	f
+setters.distortionFactor	lib/moonshine/crt.lua	/^  setters.distortionFactor = function(v)$/;"	f
+setters.feather	lib/moonshine/crt.lua	/^  setters.feather = function(v) shader:send("feather", v) end$/;"	f
+setters.feedback	lib/moonshine/pixelate.lua	/^  setters.feedback = function(v)$/;"	f
+setters.fog_color	lib/moonshine/fog.lua	/^	setters.fog_color = function(t)$/;"	f
+setters.frequency	lib/moonshine/scanlines.lua	/^  setters.frequency = function(v)$/;"	f
+setters.light_position	lib/moonshine/godsray.lua	/^  setters.light_position = function(v)$/;"	f
+setters.light_x	lib/moonshine/godsray.lua	/^  setters.light_x = function(v)$/;"	f
+setters.light_y	lib/moonshine/godsray.lua	/^  setters.light_y = function(v)$/;"	f
+setters.min_luma	lib/moonshine/glow.lua	/^  setters.min_luma = function(v)$/;"	f
+setters.octaves	lib/moonshine/fog.lua	/^	setters.octaves = function(i)$/;"	f
+setters.offset	lib/moonshine/fastgaussianblur.lua	/^  setters.offset =  function(v)$/;"	f
+setters.offset_type	lib/moonshine/fastgaussianblur.lua	/^  setters.offset_type = function(v)$/;"	f
+setters.opacity	lib/moonshine/scanlines.lua	/^  setters.opacity = function(v)$/;"	f
+setters.palette	lib/moonshine/dmg.lua	/^  setters.palette = function(v)$/;"	f
+setters.phase	lib/moonshine/scanlines.lua	/^  setters.phase = function(v)$/;"	f
+setters.radius	lib/moonshine/boxblur.lua	/^  setters.radius = function(v)$/;"	f
+setters.radius_x	lib/moonshine/boxblur.lua	/^  setters.radius_x = function(v) radius_x = tonumber(v) end$/;"	f
+setters.radius_y	lib/moonshine/boxblur.lua	/^  setters.radius_y = function(v) radius_y = tonumber(v) end$/;"	f
+setters.samples	lib/moonshine/godsray.lua	/^  setters.samples = function(v)$/;"	f
+setters.scaleFactor	lib/moonshine/crt.lua	/^  setters.scaleFactor = function(v)$/;"	f
+setters.sigma	lib/moonshine/fastgaussianblur.lua	/^  setters.sigma =  function(v)$/;"	f
+setters.sigma	lib/moonshine/gaussianblur.lua	/^  setters.sigma = function(v)$/;"	f
+setters.size	lib/moonshine/pixelate.lua	/^  setters.size = function(v)$/;"	f
+setters.speed	lib/moonshine/fog.lua	/^	setters.speed = function(t)$/;"	f
+setters.strength	lib/moonshine/desaturate.lua	/^  setters.strength = function(v)$/;"	f
+setters.strength	lib/moonshine/glow.lua	/^  setters.strength = function(v)$/;"	f
+setters.taps	lib/moonshine/fastgaussianblur.lua	/^  setters.taps = function(v)$/;"	f
+setters.thickness	lib/moonshine/scanlines.lua	/^  setters.thickness = function(v)$/;"	f
+setters.time	lib/moonshine/fog.lua	/^	setters.time = function(n)$/;"	f
+setters.tint	lib/moonshine/desaturate.lua	/^  setters.tint = function(c)$/;"	f
+setters.width	lib/moonshine/scanlines.lua	/^  setters.width = function(v)$/;"	f
+setters.x	lib/moonshine/crt.lua	/^  setters.x = function(v) setters.distortionFactor{v, distortionFactor[2]} end$/;"	f
+setters.y	lib/moonshine/crt.lua	/^  setters.y = function(v) setters.distortionFactor{distortionFactor[1], v} end$/;"	f
+setters[k]	lib/moonshine/filmgrain.lua	/^    setters[k] = function(v) shader:send(k, math.max(0, tonumber(v) or 0)) end$/;"	f
+setters[k]	lib/moonshine/godsray.lua	/^    setters[k] = function(v)$/;"	f
+setters[k]	lib/moonshine/vignette.lua	/^    setters[k] = function(v) shader:send(k, math.max(0, tonumber(v) or 0)) end$/;"	f
+sine	lib/timer.lua	/^	sine   = function(s) return 1-math.cos(s*math.pi\/2) end,$/;"	f
+sketch	lib/moonshine/README.md	/^### sketch$/;"	S
+tween_collect_payload	lib/timer.lua	/^	local function tween_collect_payload(subject, target, out)$/;"	f
+updateTimerHandle	lib/timer.lua	/^local function updateTimerHandle(handle, dt)$/;"	f
+vignette	lib/moonshine/README.md	/^### vignette$/;"	S
+{__call	lib/Input.lua	/^return setmetatable({}, {__call = function(_, ...) return Input.new(...) end})$/;"	f
+{__call	lib/moonshine/init.lua	/^return setmetatable(moonshine, {__call = function(_, ...) return moonshine.chain(...) end})$/;"	f
+{size	objects/Segment.lua	/^  self.timer:tween(0.1, self, {size = self.size * 1.25}, 'in-quad', function() $/;"	f
