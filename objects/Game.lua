@@ -31,7 +31,7 @@ function Game:draw()
   -- this looks awful and unoptimized
   -- TODO: make it look awesome
   local score = love.graphics.newText(font, {{1, 1, 1, 0.5}, string.format("%02d", math.max(#self.tails - INITIAL_SIZE, 0))})
-  love.graphics.draw(score, gw/2, gh/2, 0, 1, 1, score:getWidth()/2, score:getHeight()/2)
+  love.graphics.draw(score, gw/2, gh/2, 0, scoreScale, scoreScale, score:getWidth()/2, score:getHeight()/2)
 
   self.player:draw()
   self.food:draw()

@@ -18,6 +18,8 @@ gh = 216
 
 INITIAL_SIZE = 3
 
+scoreScale = 1
+
 function love.load(arg)
   love.graphics.setDefaultFilter('nearest')
 	tick.rate = (1/60)

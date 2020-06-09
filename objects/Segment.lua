@@ -66,6 +66,11 @@ function Segment:addTail(tails)
     else
       self.tail = Tail(self.world, self, 12, self.finalSize, self.speed)
       table.insert(tails, self.tail)
+
+      -- make score grow effect
+      self.timer:tween(0.15, _G, {scoreScale = 1.15}, 'in-quad', function() 
+        self.timer:tween(0.2, _G, {scoreScale = 1}, 'in-quad')
+      end)
     end
   end)
 end
