@@ -56,10 +56,10 @@ function Game:checkCollisions()
   for index, tail in ipairs(self.tails) do
     local current = Vector(tail:getModPos())
     
-    for i=index + 1, #self.tails-1 do
+    for i=index + 1, #self.tails - 1 do
       local other = Vector(self.tails[i]:getModPos())
 
-      if (current - other).length < (size * 0.9) then
+      if (current - other).length < (size * 0.8) then
         gameState:replace(Game)
         return
       end

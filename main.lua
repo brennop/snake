@@ -39,7 +39,7 @@ function love.load(arg)
               .chain(moonshine.effects.crt)
 
   effect.glow.strength = 4
-  effect.chromasep.radius = 1.4
+  effect.chromasep.radius = 1.6
   effect.scanlines.opacity = 0.05
   effect.scanlines.width = 4
 
