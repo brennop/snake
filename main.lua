@@ -33,16 +33,6 @@ function love.load(arg)
   love.graphics.setBackgroundColor(0.1, 0.1, 0.1, 1)
   canvas = love.graphics.newCanvas()
 
-  effect = moonshine(moonshine.effects.glow)
-              .chain(moonshine.effects.chromasep)
-              .chain(moonshine.effects.scanlines)
-              .chain(moonshine.effects.crt)
-
-  effect.glow.strength = 4
-  effect.chromasep.radius = 1.6
-  effect.scanlines.opacity = 0.05
-  effect.scanlines.width = 4
-
   gameState = State(Game)
 end
 
@@ -56,8 +46,8 @@ function love.draw()
     gameState:current():draw()
   love.graphics.setCanvas()
 
-  effect(function()
-    love.graphics.draw(canvas, 0, 0, 0, 2, 2)
-  end)
+  love.graphics.setShader(shader)
+  love.graphics.draw(canvas, 0, 0, 0, 2, 2)
+  love.graphics.setShader()
 	love.graphics.print("FPS: "..tostring(love.timer.getFPS()), 10, 10)
 end

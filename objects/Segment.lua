@@ -17,6 +17,9 @@ function Segment:new(self, world, x, y, size, speed)
   self.timer = Timer()
   self.size = 0
   self.timer:tween(0.4, self, {size = self.finalSize}, 'in-out-cubic')
+
+  self.shader = love.graphics.newShader('shaders/square.frag')
+  self.canvas = love.graphics.newCanvas()
 end
 
 function Segment:update(self, dt)
@@ -27,13 +30,13 @@ function Segment:update(self, dt)
 end
 
 function Segment:draw()
-  local modPoints = {getPoints(self.modX, self.modY, self.size/2, self.body:getAngle())}
-
-  for i=0,0 do
-    for j=0,0 do
-      love.graphics.polygon("fill", getPoints(self.modX + i * gw, self.modY + j * gh, self.size/2, self.body:getAngle()))
-    end
-  end
+  love.graphics.setShader(self.shader);
+  self.shader:send('pos', {self.modX, self.modY})
+  self.shader:send('resolution', {gw, gh})
+  self.shader:send('size', {self.size, self.size})
+  self.shader:send('rotation', self.body:getAngle())
+  love.graphics.draw(self.canvas)
+  love.graphics.setShader();
 
   if self.tail then self.tail:draw() end
 end
@@ -44,14 +47,6 @@ end
 
 function getModular(body)
   return body:getX() % gw, body:getY() % gh
-end
-
-function getPoints(x, y, s, r)
-  a = vector(s, s):rotated(r) + vector(x, y)
-  b = vector(s, -s):rotated(r) + vector(x, y)
-  c = vector(-s, -s):rotated(r) + vector(x, y)
-  d = vector(-s, s):rotated(r) + vector(x, y)
-  return a.x, a.y, b.x, b.y, c.x, c.y, d.x, d.y
 end
 
 function Segment:getModPos()
