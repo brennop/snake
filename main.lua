@@ -30,6 +30,12 @@ function love.load(arg)
   input:bind('left', 'left')
   input:bind('right', 'right')
 
+  effect = moonshine(moonshine.effects.glow)
+    .chain(moonshine.effects.crt)
+    .chain(moonshine.effects.scanlines)
+  effect.glow.strength = 2
+  effect.scanlines.opacity = 0.2
+
   love.graphics.setBackgroundColor(0.1, 0.1, 0.1, 1)
   canvas = love.graphics.newCanvas()
 
@@ -47,7 +53,9 @@ function love.draw()
   love.graphics.setCanvas()
 
   love.graphics.setShader(shader)
-  love.graphics.draw(canvas, 0, 0, 0, 2, 2)
+  effect(function()
+    love.graphics.draw(canvas, 1, 0, 0, 2, 2)
+  end)
   love.graphics.setShader()
 	love.graphics.print("FPS: "..tostring(love.timer.getFPS()), 10, 10)
 end

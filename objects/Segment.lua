@@ -16,7 +16,7 @@ function Segment:new(self, world, x, y, size, speed)
 
   self.timer = Timer()
   self.size = 0
-  self.timer:tween(0.4, self, {size = self.finalSize}, 'in-out-cubic')
+  self.timer:tween(0.5, self, {size = self.finalSize}, 'in-out-cubic')
 
   self.shader = love.graphics.newShader('shaders/square.frag')
   self.canvas = love.graphics.newCanvas()
