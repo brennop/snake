@@ -1,5 +1,9 @@
 Game = Object:extend()
 
+function getLength(x, y)
+  return math.sqrt(x * x + y * y)
+end
+
 function Game:new()
   self.world = love.physics.newWorld(0, 0, true);
 
@@ -17,9 +21,9 @@ function Game:update(dt)
   self.player:update(dt)
   self.world:update(dt)
 
-  local p = Vector(self.player:getModPos())
-  dist = self.food.pos - p
-  if dist.length < 14 then
+  local p_x, p_y = self.player:getModPos()
+  local dist = getLength(self.food.pos.x - p_x, self.food.pos.y - p_y)
+  if dist < 14 then
     self.food:eat()
     self.player:addTail(self.tails)
   end
@@ -54,12 +58,15 @@ function Game:checkCollisions()
   local size = self.player.size
 
   for index, tail in ipairs(self.tails) do
-    local current = Vector(tail:getModPos())
+    local current_x, current_y = tail:getModPos()
     
     for i=index + 1, #self.tails - 1 do
-      local other = Vector(self.tails[i]:getModPos())
+      local other_x, other_y = self.tails[i]:getModPos()
 
-      if (current - other).length < (size * 0.8) then
+      -- get dist between current and other
+      local dist = getLength(current_x - other_x, current_y - other_y)
+
+      if dist < (size * 0.8) then
         gameState:replace(Game)
         return
       end

@@ -16,7 +16,7 @@ function Food:draw()
 end
 
 function Food:setRandomPosition()
-  self.pos = Vector(love.math.random(gw), love.math.random(gh))
+  self.pos = { x = love.math.random(gw), y = love.math.random(gh) }
 end
 
 function Food:eat()
