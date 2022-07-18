@@ -24,8 +24,15 @@ vec4 effect(vec4 color, Image image, vec2 texture_coords, vec2 screen_coords) {
   uv -= 0.5;
   uv *= rotate(-rotation);
 
-  vec2 r = abs(uv);
-  float s = 1.0 - step((size / resolution).x, max(r.x, r.y));
+  // scale to size
+  uv *= (resolution.x/size);
+
+  float radius = 0.6;
+  float scale = 0.4;
+
+  float r = step(radius, length(max(abs(uv) - scale, 0.0)));
+
+  float s = 1.0 - r;
 
   return vec4(s);
 }

@@ -1,7 +1,7 @@
 Food = Object:extend()
 
 function Food:new(size)
-  self.size = size or 3
+  self.size = 4
   self:setRandomPosition()
 end
 
@@ -10,7 +10,7 @@ function Food:draw()
 
   for i=-0,0 do
     for j=-0,0 do
-      love.graphics.rectangle("fill", x + i * gw, y + j * gh, self.size, self.size)
+      love.graphics.rectangle("fill", x + i * gw, y + j * gh, self.size, self.size, 2, 2)
     end
   end
 end
