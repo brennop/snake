@@ -1,5 +1,3 @@
-vector = require "lib/brinevector"
-
 Segment = Object:extend()
 
 function Segment:new(self, world, x, y, size, speed)
@@ -37,8 +35,17 @@ function Segment:draw()
   self.shader:send('rotation', self.body:getAngle())
   love.graphics.draw(self.canvas)
   love.graphics.setShader();
+  
 
   if self.tail then self.tail:draw() end
+end
+
+function Segment:drawDebug()
+  love.graphics.push()
+	love.graphics.translate(self.modX, self.modY)
+	love.graphics.rotate(self.body:getAngle())
+  love.graphics.rectangle("fill", -self.size / 2, -self.size/ 2, self.size, self.size, 2, 2)
+  love.graphics.pop()
 end
 
 function Segment:connect(obj)

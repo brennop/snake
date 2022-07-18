@@ -1,8 +1,7 @@
 Object = require "lib/classic"
 Input = require "lib/Input"
 Timer = require "lib/timer"
-
-local tick = require 'lib/tick'
+local moonshine = require "lib/moonshine"
 
 require 'objects/Game'
 require 'objects/State'
@@ -20,16 +19,26 @@ scoreScale = 1
 
 function love.load(arg)
   love.graphics.setDefaultFilter('nearest')
-	tick.rate = (1/60)
 
   font = love.graphics.newFont('assets/roboto.ttf', 48)
 
   input = Input()
   input:bind('left', 'left')
+  input:bind('a', 'left')
   input:bind('right', 'right')
+  input:bind('d', 'right')
 
   love.graphics.setBackgroundColor(0.1, 0.1, 0.1, 1)
   canvas = love.graphics.newCanvas()
+
+  effect = moonshine(moonshine.effects.glow)
+    .chain(moonshine.effects.scanlines)
+    .chain(moonshine.effects.crt)
+    .chain(moonshine.effects.chromasep)
+
+  effect.glow.strength = 1.2
+  effect.scanlines.opacity = 0.2
+  effect.chromasep.radius = 1
 
   gameState = State(Game)
 end
@@ -41,11 +50,11 @@ end
 function love.draw()
   love.graphics.setCanvas(canvas)
     love.graphics.clear()
-    gameState:current():draw()
+      gameState:current():draw()
   love.graphics.setCanvas()
 
-  love.graphics.setShader(shader)
-  love.graphics.draw(canvas, 1, 0, 0, 2, 2)
-  love.graphics.setShader()
+  -- effect(function()
+    love.graphics.draw(canvas, 1, 0, 0, 2, 2)
+  -- end)
 	love.graphics.print("FPS: "..tostring(love.timer.getFPS()), 10, 10)
 end
