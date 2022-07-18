@@ -53,8 +53,9 @@ function love.draw()
       gameState:current():draw()
   love.graphics.setCanvas()
 
-  -- effect(function()
+  effect(function()
     love.graphics.draw(canvas, 1, 0, 0, 2, 2)
-  -- end)
-	love.graphics.print("FPS: "..tostring(love.timer.getFPS()), 10, 10)
+  end)
+
+	-- love.graphics.print("FPS: "..tostring(love.timer.getFPS()), 10, 10)
 end

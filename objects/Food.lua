@@ -1,5 +1,7 @@
 Food = Object:extend()
 
+local deadzone = 10
+
 function Food:new(size)
   self.size = 4
   self:setRandomPosition()
@@ -16,7 +18,10 @@ function Food:draw()
 end
 
 function Food:setRandomPosition()
-  self.pos = { x = love.math.random(gw), y = love.math.random(gh) }
+  self.pos = { 
+    x = love.math.random(gw - deadzone) + deadzone / 2,
+    y = love.math.random(gh - deadzone) + deadzone / 2
+  }
 end
 
 function Food:eat()
